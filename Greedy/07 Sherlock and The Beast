@@ -1,0 +1,40 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'decentNumber' function below.
+#
+# The function accepts INTEGER n as parameter.
+#
+
+def decentNumber(n):
+    # Write your code here
+    #!/bin/python3
+    digits = n
+    flag = False
+    a, b = 0, 0
+    for j in range(int(digits//3), -1, -1):
+        #print(j)
+        if (digits-(3*j)) % 5 == 0:
+            a = j
+            b = (digits-(3*j))//5
+            return((("5"*(a*3))+("3"*(b*5))))
+            flag = True
+            break
+
+    if not flag:
+        return(-1)
+
+
+if __name__ == '__main__':
+    t = int(input().strip())
+
+    for t_itr in range(t):
+        n = int(input().strip())
+
+        print(decentNumber(n))
