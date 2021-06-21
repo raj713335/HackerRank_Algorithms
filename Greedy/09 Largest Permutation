@@ -16,12 +16,7 @@ import sys
 #
 
 def largestPermutation(k, arr):
-    # Write your code here
-    
-    if k >= len(arr):
-        return sorted(arr, reverse=True)
-
-    
+    # Write your code here 
     indeces = {}
     for i in range(0, len(arr)):
         indeces[arr[i]] = i
