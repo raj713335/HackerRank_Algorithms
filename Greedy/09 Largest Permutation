@@ -22,7 +22,7 @@ def largestPermutation(k, arr):
         return sorted(arr, reverse=True)
 
     
-        indeces = {}
+    indeces = {}
     for i in range(0, len(arr)):
         indeces[arr[i]] = i
         
