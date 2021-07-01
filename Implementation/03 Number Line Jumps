@@ -1,0 +1,81 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'kangaroo' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts following parameters:
+#  1. INTEGER x1
+#  2. INTEGER v1
+#  3. INTEGER x2
+#  4. INTEGER v2
+#
+
+def kangaroo(x1, v1, x2, v2):
+    # Write your code here
+    count=0
+    
+    if x1>x2 and v1>v2:
+        return "NO"
+    elif x2>x1 and v2>v1:
+        return "NO"
+    
+    while(x1!=x2) and count<5000:
+        x1+=v1
+        x2+=v2
+        count+=1
+                
+    if x2==x1:
+        return "YES"
+    else:
+        return "NO"
+        
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    first_multiple_input = input().rstrip().split()
+
+    x1 = int(first_multiple_input[0])
+
+    v1 = int(first_multiple_input[1])
+
+    x2 = int(first_multiple_input[2])
+
+    v2 = int(first_multiple_input[3])
+
+    result = kangaroo(x1, v1, x2, v2)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+
+
+"""
+x1,v1,x2,v2 = input().strip().split(' ')
+x1,v1,x2,v2 = [int(x1),int(v1),int(x2),int(v2)]
+if x1>x2:
+    x1,x2=x2,x1
+    v1,v2=v2,v1
+d=x2-x1
+r=v1-v2
+flag=False
+if d==0:
+    flag=True
+elif r>0:
+    flag=(d%r == 0)
+else:
+    flag=False
+if flag:
+    print("YES")
+else:
+    print("NO")
+"""
