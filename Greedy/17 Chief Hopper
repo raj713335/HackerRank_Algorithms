@@ -1,3 +1,5 @@
+"""https://www.hackerrank.com/challenges/chief-hopper/problem"""
+
 #!/bin/python3
 
 import math
@@ -37,3 +39,24 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+    
+"""
+def chiefHopper(arr):
+    # Write your code here
+    
+    
+    
+    for i in range(min(arr)-2,100000000):
+        botenergy=i
+        iterx=0
+        for height in arr:
+            botenergy=botenergy+(botenergy-height)
+            print(height,botenergy)
+            iterx+=1
+            if botenergy<0:
+                break
+            else:
+                if iterx==len(arr):
+                    return i
+                    
+"""
