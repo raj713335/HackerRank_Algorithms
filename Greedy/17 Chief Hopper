@@ -46,7 +46,7 @@ def chiefHopper(arr):
     
     
     
-    for i in range(min(arr)-2,100000000):
+    for i in range(min(arr)-2,10000000):
         botenergy=i
         iterx=0
         for height in arr:
